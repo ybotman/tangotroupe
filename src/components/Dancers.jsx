@@ -11,7 +11,8 @@ const SKILL_LEVELS = [
 export default function Dancers() {
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({
-    name: '', email: '', phone: '', skill: '', availability: '', message: '',
+    name: '', email: '', phone: '', role: '', skill: '', has_partner: false,
+    partner_name: '', availability: '', ability_notes: '', message: '',
   })
 
   const handleSubmit = e => {
@@ -92,7 +93,7 @@ export default function Dancers() {
               Thank you for signing up. We'll be in touch soon with details about upcoming performances. ¡Gracias!
             </p>
             <button
-              onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', skill: '', availability: '', message: '' }) }}
+              onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', role: '', skill: '', has_partner: false, partner_name: '', availability: '', ability_notes: '', message: '' }) }}
               className="mt-6 text-sm text-rose-700 underline"
             >
               Submit another response
@@ -117,12 +118,63 @@ export default function Dancers() {
                 <input type="tel" value={form.phone} onChange={set('phone')} className={inputClass} />
               </div>
               <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">I dance as *</label>
+                <div className="flex gap-2 mt-1">
+                  {['Lead', 'Follow', 'Both'].map(r => (
+                    <button key={r} type="button"
+                      onClick={() => setForm(f => ({ ...f, role: r }))}
+                      className={`flex-1 py-2 rounded-lg text-sm font-medium border-2 transition-colors ${
+                        form.role === r ? 'bg-rose-700 text-white border-rose-700' : 'bg-white text-gray-600 border-gray-200 hover:border-gray-400'
+                      }`}>
+                      {r === 'Lead' ? '🕺 Lead' : r === 'Follow' ? '💃 Follow' : '👫 Both'}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Skill Level *</label>
                 <select required value={form.skill} onChange={set('skill')} className={inputClass}>
                   <option value="">Select your level...</option>
                   {SKILL_LEVELS.map(s => <option key={s} value={s}>{s}</option>)}
                 </select>
               </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Do you have a regular partner?</label>
+                <div className="flex gap-2 mt-1">
+                  {[{ val: true, label: '👫 Yes, we apply together' }, { val: false, label: '🎲 No — match me up' }].map(opt => (
+                    <button key={String(opt.val)} type="button"
+                      onClick={() => setForm(f => ({ ...f, has_partner: opt.val }))}
+                      className={`flex-1 py-2 px-1 rounded-lg text-xs font-medium border-2 transition-colors ${
+                        form.has_partner === opt.val ? 'bg-rose-700 text-white border-rose-700' : 'bg-white text-gray-600 border-gray-200 hover:border-gray-400'
+                      }`}>
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {form.has_partner && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Partner's Name</label>
+                <input value={form.partner_name} onChange={set('partner_name')}
+                  placeholder="Your partner's full name (they should also sign up)"
+                  className={inputClass} />
+              </div>
+            )}
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Ability Notes</label>
+              <textarea
+                value={form.ability_notes}
+                onChange={set('ability_notes')}
+                rows={2}
+                placeholder="Describe your strengths — e.g., 'comfortable leading milonga and vals, performed at festivals, patient and gentle with beginners'"
+                className={inputClass}
+              />
             </div>
 
             <div>
@@ -136,12 +188,12 @@ export default function Dancers() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Tell us about yourself</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Anything else you'd like us to know?</label>
               <textarea
                 value={form.message}
                 onChange={set('message')}
-                rows={4}
-                placeholder="How long have you been dancing? Do you have a regular partner? Any performance or teaching experience? What draws you to this program?"
+                rows={3}
+                placeholder="What draws you to this program? Any experience with seniors, teaching, or therapeutic settings?"
                 className={inputClass}
               />
             </div>

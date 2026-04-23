@@ -1,0 +1,96 @@
+[
+  {
+    "id": 1,
+    "title": "Brookline Tango Day",
+    "date": "2026-05-15",
+    "description": "Three back-to-back visits across Brookline facilities — one energetic day of outreach.",
+    "status": "Open",
+    "sessions": [
+      {
+        "id": "1a",
+        "time": "10:00 AM",
+        "venue": "Goddard House Assisted Living",
+        "location": "Brookline, MA",
+        "duration": "45 min",
+        "pairsNeeded": 2,
+        "notes": "EnrichedLIFE program. Memory care wing + main hall.",
+        "enrolledPairs": [
+          { "id": "p1", "lead": "Carlos M.", "follow": "Ana R.", "type": "pair", "comments": "5 years dancing together, have performed at senior centers before" }
+        ]
+      },
+      {
+        "id": "1b",
+        "time": "1:00 PM",
+        "venue": "Center Communities of Brookline",
+        "location": "Brookline, MA",
+        "duration": "45 min",
+        "pairsNeeded": 3,
+        "notes": "Hebrew SeniorLife network. Large common room available.",
+        "enrolledPairs": [
+          { "id": "p2", "lead": "David L.", "follow": "UNMATCHED", "type": "solo-lead", "comments": "Advanced leader, needs a follow partner" },
+          { "id": "p3", "lead": "UNMATCHED", "follow": "Sofia T.", "type": "solo-follow", "comments": "Intermediate follow, flexible on partner" }
+        ]
+      },
+      {
+        "id": "1c",
+        "time": "3:30 PM",
+        "venue": "Susan Bailis Assisted Living",
+        "location": "Boston/Brookline, MA",
+        "duration": "45 min",
+        "pairsNeeded": 2,
+        "notes": "Already scheduled — confirm 2 pairs minimum.",
+        "enrolledPairs": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Cambridge Afternoon",
+    "date": "2026-06-05",
+    "description": "Two Cambridge visits, memory care focus.",
+    "status": "Open",
+    "sessions": [
+      {
+        "id": "2a",
+        "time": "11:00 AM",
+        "venue": "Cadbury Commons",
+        "location": "Cambridge, MA",
+        "duration": "45 min",
+        "pairsNeeded": 2,
+        "notes": "Family-owned, lifelong learner crowd. Active participation welcome.",
+        "enrolledPairs": []
+      },
+      {
+        "id": "2b",
+        "time": "2:30 PM",
+        "venue": "Neville Place",
+        "location": "Cambridge, MA",
+        "duration": "45 min",
+        "pairsNeeded": 3,
+        "notes": "Compass Memory Support program. Gentle workshop preferred.",
+        "enrolledPairs": [
+          { "id": "p4", "lead": "Toby B.", "follow": "WaiLing B.", "type": "pair", "comments": "Organizers — always in" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Quincy Coastal Visit",
+    "date": "2026-06-20",
+    "description": "Single venue, Platinum Series performance at Atria Marina Place.",
+    "status": "Planning",
+    "sessions": [
+      {
+        "id": "3a",
+        "time": "2:00 PM",
+        "venue": "Atria Marina Place",
+        "location": "Quincy, MA",
+        "duration": "45 min",
+        "pairsNeeded": 3,
+        "notes": "Platinum Series — expect a sophisticated, engaged audience. Full performance preferred over workshop.",
+        "enrolledPairs": []
+      }
+    ]
+  }
+]
