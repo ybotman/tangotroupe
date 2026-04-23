@@ -35,7 +35,7 @@ export default function Mission({ onNavigate }) {
     <div className="space-y-10">
       {/* Hero */}
       <div className="text-center py-12 bg-white rounded-2xl shadow-sm border border-gray-100">
-        <div className="text-5xl mb-4">💃🕺</div>
+        <img src="/logo.png" alt="TangoTroupe" className="w-24 h-24 rounded-full object-cover mx-auto mb-4" />
         <h2 className="text-4xl font-bold text-rose-900 mb-4">Dance with Purpose</h2>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
           TangoTroupe Boston brings professional Argentine Tango performances and gentle therapeutic workshops to Greater Boston's senior living communities and cultural centers.
